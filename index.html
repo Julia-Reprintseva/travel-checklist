@@ -389,15 +389,12 @@
       .illus-boots-wrap { padding-right: 0; overflow: hidden; }
       .controls {
         padding: .35rem .8rem;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         overflow-x: visible;
         gap: .3rem;
       }
-      .reset-btn {
-        margin-left: auto;
-        order: 2;
-      }
-      .progress-pill { order: 1; }
+      .progress-inline { display: none; }
+      .reset-btn { margin-left: auto; }
     }
 
     /* ── Декоративные иллюстрации ── */
@@ -455,7 +452,7 @@
     }
     /* ── Footer ── */
     .site-footer {
-      border-top: 1px solid var(--border);
+      border-top: none;
       margin-top: 3rem;
       padding: 2rem 1.2rem 2.8rem;
       color: var(--muted);
