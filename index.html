@@ -377,11 +377,27 @@
     }
 
     @media (max-width: 600px) {
-      .illus-bike { display: none !important; }
+      .illus-bike {
+        display: block !important;
+        top: 8px !important;
+        right: 8px !important;
+        left: auto !important;
+        opacity: 0.45 !important;
+      }
+      .illus-bike img { width: 90px !important; }
       .illus-boots img { width: 80px; }
       .illus-boots-wrap { padding-right: 0; overflow: hidden; }
-      .controls { padding: .4rem .6rem; }
-      .reset-btn { margin-left: 0; }
+      .controls {
+        padding: .35rem .8rem;
+        flex-wrap: wrap;
+        overflow-x: visible;
+        gap: .3rem;
+      }
+      .reset-btn {
+        margin-left: auto;
+        order: 2;
+      }
+      .progress-pill { order: 1; }
     }
 
     /* ── Декоративные иллюстрации ── */
@@ -948,7 +964,11 @@ function scrollToSection(id) {
   const top = el.getBoundingClientRect().top + window.scrollY - stickyH - navH - 8;
   window.scrollTo({ top, behavior: 'smooth' });
 }
-document.querySelector('.illus-bike').style.display = 'block';
+if (window.innerWidth > 600) {
+  document.querySelector('.illus-bike').style.display = 'block';
+} else {
+  document.querySelector('.illus-bike').style.removeProperty('display');
+}
 
 </script>
 
